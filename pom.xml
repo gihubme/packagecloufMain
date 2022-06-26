@@ -29,17 +29,21 @@
             <optional>true</optional>
             <version>1.18.24</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.nnn4eu.test</groupId>
+            <artifactId>packagecloufDataGen</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <extensions>
-            <extension>
-                <groupId>io.packagecloud.maven.wagon</groupId>
-                <artifactId>maven-packagecloud-wagon</artifactId>
-                <version>0.0.6</version>
-            </extension>
-        </extensions>
+<!--        <extensions>-->
+<!--            <extension>-->
+<!--                <groupId>io.packagecloud.maven.wagon</groupId>-->
+<!--                <artifactId>maven-packagecloud-wagon</artifactId>-->
+<!--                <version>0.0.6</version>-->
+<!--            </extension>-->
+<!--        </extensions>-->
 
         <plugins>
             <plugin>
@@ -83,20 +87,22 @@
                 </executions>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>3.0.0-M4</version>
-                <configuration>
-                    <scmCommentPrefix>[maven-release-plugin] [skip ci]</scmCommentPrefix>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
-                    <useReleaseProfile>false</useReleaseProfile>
-                    <checkModificationExcludes>
-                        <checkModificationExclude>pom.xml</checkModificationExclude>
-                    </checkModificationExcludes>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-release-plugin</artifactId>-->
+<!--                <version>3.0.0-M4</version>-->
+<!--                <configuration>-->
+<!--                    <scmCommentPrefix>[maven-release-plugin] [skip ci]</scmCommentPrefix>-->
+<!--                    <autoVersionSubmodules>true</autoVersionSubmodules>-->
+<!--                    <tagNameFormat>v@{project.version}</tagNameFormat>-->
+<!--                    <useReleaseProfile>false</useReleaseProfile>-->
+<!--                    <checkModificationExcludes>-->
+<!--                        <checkModificationExclude>pom.xml</checkModificationExclude>-->
+<!--                    </checkModificationExcludes>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
+
+
 </project>
