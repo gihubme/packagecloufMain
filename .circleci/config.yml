@@ -27,6 +27,8 @@ jobs:
       # Checkout the code as the first step.
       - checkout
 
+#      - run: curl -s https://packagecloud.io/install/repositories/nikakar/mvnrelease/script.deb.sh | sudo bash
+
       # 1. Download and cache dependencies
       - restore_cache:
           keys:
@@ -34,8 +36,15 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: curl -s https://packagecloud.io/install/repositories/nikakar/mvnrelease/script.deb.sh | sudo bash
-      - run: mvn dependency:get -Dartifact=org.nnn4eu.test:packageclouf-datagen:1.1 -B
+      - run:
+          name: get-packagecloud
+          command: |
+            mvn dependency:get \
+                -DrepoUrl=https://packagecloud.io/nikakar/mvnrelease/maven2/ \
+                    -Dartifact=org.nnn4eu.test:packageclouf-datagen:1.1:jar \
+                    -Dtransitive=false \
+                    -Ddest=packageclouf-datagen-1.1.jar \
+
       - run: mvn dependency:go-offline
 
       - save_cache:
