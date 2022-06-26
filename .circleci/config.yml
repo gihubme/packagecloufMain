@@ -23,7 +23,7 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
-#      - run:curl -s https://packagecloud.io/install/repositories/nikakar/mvnrelease/script.deb.sh | sudo bash
+      - run:curl -s https://packagecloud.io/install/repositories/nikakar/mvnrelease/script.deb.sh | sudo bash
 
       # Checkout the code as the first step.
       - checkout
