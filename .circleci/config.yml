@@ -43,9 +43,9 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
       # Use mvn clean and package as the standard maven build phase
-            - run:
-                name: Build
-                command: mvn -B -DskipTests clean package
+      - run:
+          name: Build
+          command: mvn -B -DskipTests clean package
 
       # 2. Then run your tests!
       - run:
