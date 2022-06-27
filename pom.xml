@@ -35,7 +35,18 @@
             <version>1.1</version>
         </dependency>
     </dependencies>
-
+    <repositories>
+        <repository>
+            <id>nikakar-mvnrelease</id>
+            <url>https://packagecloud.io/nikakar/mvnrelease/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <build>
 <!--        <extensions>-->
 <!--            <extension>-->
