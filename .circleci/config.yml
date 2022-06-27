@@ -36,14 +36,14 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run:
-          name: get-packagecloud
-          command: |
-            mvn dependency:get \
-                -DrepoUrl=https://packagecloud.io/nikakar/mvnrelease/maven2/ \
-                    -Dartifact=org.nnn4eu.test:packageclouf-datagen:1.1:jar \
-                    -Dtransitive=false \
-                    -Ddest=packageclouf-datagen-1.1.jar \
+#      - run:
+#          name: get-packagecloud
+#          command: |
+#            mvn dependency:get \
+#                -DrepoUrl=https://packagecloud.io/nikakar/mvnrelease/maven2/ \
+#                    -Dartifact=org.nnn4eu.test:packageclouf-datagen:1.1:jar \
+#                    -Dtransitive=false \
+#                    -Ddest=packageclouf-datagen-1.1.jar \
 
       - run: mvn dependency:go-offline
 
